@@ -134,6 +134,8 @@ contract UniswapV3Pool {
         if (amount0 > 0) balance0Before = balance0();
         if (amount1 > 0) balance1Before = balance1();
 
+
+        // its expected that the caller is a contract that is using the callback mechanism, because non-contract functions cannot imple,ent functions
         IUniswapV3MintCallback(msg.sender).uniswapV3MintCallback(
             amount0,
             amount1,
